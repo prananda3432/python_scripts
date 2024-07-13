@@ -206,12 +206,12 @@ while True:
             if frame_count > min_frame or ratio_lips < 3:
                 data_flag = 2
                 data='Fatigue'
-                cv.putText(image, data, (150, 50), cv.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2, cv.LINE_AA)
+                cv.putText(image, data, (180, 50), cv.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2, cv.LINE_AA)
 
             else:
                 data_flag = 0
                 data='Wake'
-                cv.putText(image, 'Wake', (150, 50), cv.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv.LINE_AA)
+                cv.putText(image, 'Wake', (180, 50), cv.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv.LINE_AA)
             
             message = f"{data_flag};{flag_condition}"
             client_socket.send(message.encode())
